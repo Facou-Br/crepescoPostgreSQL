@@ -7,6 +7,7 @@ $(document).ready(function () {
    */
   $.ajax({
     url: "../../../Scripts/PhP/Fernando/majStock/selectFournisseurs.php",
+    
     type: "GET",
     datatype: "json",
     success: function (data) {
