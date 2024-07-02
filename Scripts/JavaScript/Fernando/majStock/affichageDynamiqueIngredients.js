@@ -77,34 +77,10 @@ $(document).ready(function () {
       },
       success: function (response) {
         if (confirm("Êtes vous sûr de vouloir mettre à jour le stock ?")) {
-          $.ajax({
-            url: "../../../Scripts/PhP/Fernando/majStock/majStock_Fournisseur.php",
-            type: "POST",
-            data: {
-              action: "COMMIT",
-            },
-            success: function () {
-              console.log(response);
-              alert("COMMIT avec succées.");
-            },
-            error: function () {
-              alert("Erreur lors de la mise à jour du stock.");
-            },
-          });
+          alert("Erreur lors de la mise à jour du stock.");
         } else {
-          $.ajax({
-            url: "../../../Scripts/PhP/Fernando/majStock/majStock_Fournisseur.php",
-            type: "POST",
-            data: {
-              action: "ROLLBACK",
-            },
-            success: function () {
-              alert("ROLLBACK avec succées.");
-            },
-            error: function () {
-              alert("Erreur lors de la mise à jour du stock.");
-            },
-          });
+
+          alert("Erreur lors de la mise à jour du stock.");
         }
       },
       error: function () {
