@@ -1,0 +1,181 @@
+/* Styles pour le corps et les en-têtes */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Styles du formulaire */
+form#formLivreur {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+form#formLivreur label {
+    font-weight: bold;
+}
+
+form#formLivreur input[type=text],
+form#formLivreur select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form#formLivreur button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form#formLivreur button:hover {
+    background-color: #45a049;
+}
+
+/* Styles du tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Styles des boutons dans le tableau */
+table td button {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+table td button:hover {
+    opacity: 0.8;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #007bff;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#listeLivreurs input, #listeLivreurs select {
+    width: auto; 
+    margin: 0;
+    padding: 5px 10px; 
+    box-sizing: border-box;
+}
+
+#listeLivreurs td {
+    padding: 10px; 
+}
+
+#listeLivreurs button {
+    padding: 5px 15px; 
+    margin-left: 5px;
+}
+
+/* Styles spécifiques pour la gestion de la disponibilité des livreurs */
+#gestionDisponibiliteSoir {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+#listeLivreurs {
+    margin-top: 20px;
+}
+
+#listeLivreurs div {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#listeLivreurs label {
+    margin-left: 10px;
+    font-size: 1.1em;
+}
+
+#listeLivreurs input[type=checkbox] {
+    transform: scale(1.5);
+    margin-left: 20px;
+}
+
+/* Ajout d'un peu d'espace autour des inputs pour une meilleure lisibilité */
+input, select {
+    margin: 10px 0;
+}
+
+#listeLivreurs .livreur-item {
+    display: flex;
+    align-items: center; /* Centre verticalement les enfants */
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+#listeLivreurs .livreur-item input[type=checkbox] {
+    margin-right: 20px; /* Ajoute un espace entre la checkbox et le label */
+    cursor: pointer;
+}
+
+#listeLivreurs .livreur-item label {
+    margin-left: 10px;
+    flex-grow: 1;
+}
+
+form#formLivreur {
+    width: 500px;
+    margin: 0 auto;
+}
