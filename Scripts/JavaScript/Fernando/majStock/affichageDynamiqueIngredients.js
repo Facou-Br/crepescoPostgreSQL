@@ -6,9 +6,7 @@ $(document).ready(function () {
    * @Facou-Br
    */
   $("select.fournisseurs").change(function () {
-    //console.log("Debut de la fonction lors du changement de fournisseur.")
     let fournisseurs = $(this).val();
-    //console.log(fournisseurs);
     $(".ingredients").empty();
     $.ajax({
       url: "../../../Scripts/PhP/Fernando/majStock/selectIngredients.php",
@@ -18,9 +16,7 @@ $(document).ready(function () {
       },
       datatype: "json",
       success: function (data) {
-        //console.log(data);
         let arrayFournisseurs = JSON.parse(data);
-        //console.log(arrayFournisseurs);
         $(".ingredients").append("<br>");
         $.each(arrayFournisseurs, function (key, val) {
           $(".ingredients").append(
@@ -66,27 +62,21 @@ $(document).ready(function () {
       ingredientsObj[idIngredients[i]] = ingredients[i];
     }
 
-    //console.log(ingredientsObj);
-
-
-    $.ajax({
-      url: "../../../Scripts/PhP/Fernando/majStock/majStock_Fournisseur.php",
-      type: "POST",
-      data: {
-        ingredientsObj: JSON.stringify(ingredientsObj),
-      },
-      success: function (response) {
-        if (confirm("Êtes vous sûr de vouloir mettre à jour le stock ?")) {
-          alert("Erreur lors de la mise à jour du stock.");
-        } else {
-
-          alert("Erreur lors de la mise à jour du stock.");
-        }
-      },
-      error: function () {
-        alert("Erreur lors de la mise à jour du stock.");
-      },
-    });
+    if (confirm("Êtes-vous sûr de vouloir mettre à jour le stock ?")) {
+      $.ajax({
+        url: "../../../Scripts/PhP/Fernando/majStock/majStock_Fournisseur.php",
+        type: "POST",
+        data: {
+          ingredientsObj: JSON.stringify(ingredientsObj),
+        },
+        success: function (response) {
+          alert("Stock mis à jour.");
+        },
+        error: function () {
+          alert("Rollback : Erreur lors de la mise à jour du stock.");
+        },
+      });
+    }
 
   });
 });
